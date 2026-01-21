@@ -1,10 +1,10 @@
 package ua.Demkiv.vending;
 
 public final class Product {
-    
+
     private final int id;
-    private String name;
-    private double price;
+    private final String name;
+    private final double price;
 
     public Product( int id, String name, double price ) {
         if (id < 0)

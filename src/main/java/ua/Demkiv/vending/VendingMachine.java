@@ -7,10 +7,9 @@ public class VendingMachine {
     private Product [] products;
     private double balance;
 
-    public VendingMachine(Product [] products, int balance)
+    public VendingMachine(Product [] products)
     {
         this.products = Arrays.copyOf(products, products.length);
-        this.balance = balance;
     }
 
     public String[] getProductsNames() {
@@ -22,6 +21,9 @@ public class VendingMachine {
     }
 
     public void insertMoney(double amount) {
+        if (amount <= 0)
+            throw new IllegalArgumentException("Amount must be positive");
+
         balance += amount;
     }
 
@@ -32,11 +34,9 @@ public class VendingMachine {
                     balance -= product.getPrice();
                     return product;
                 } else throw new IllegalArgumentException("Money not enough");
-            } else {
-                throw new IllegalArgumentException("Product with this id not found");
             }
         }
-        return null;
+        throw new IllegalArgumentException("Product not found");
     }
 
     public double getChange() {
