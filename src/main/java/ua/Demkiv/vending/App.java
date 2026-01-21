@@ -2,7 +2,10 @@ package ua.Demkiv.vending;
 
 
 import java.util.Arrays;
-
+/**
+ * Demo application for the VendingMachine.
+ * Shows how to create products, insert money, select products, and get change.
+ */
 public class App
 {
     public static void main( String[] args )
