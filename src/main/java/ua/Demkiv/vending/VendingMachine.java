@@ -20,11 +20,12 @@ public class VendingMachine {
         return productsNames;
     }
 
-    public void insertMoney(double amount) {
+    public double insertMoney(double amount) {
         if (amount <= 0)
             throw new IllegalArgumentException("Amount must be positive");
 
         balance += amount;
+        return balance;
     }
 
     public Product selectProduct(int id) {
